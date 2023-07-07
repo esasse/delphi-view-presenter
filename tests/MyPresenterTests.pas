@@ -10,11 +10,10 @@ uses
 
 type
   [TestFixture]
-  TMyTestObject = class
+  TMyPresenterTests = class
   private
     FMockView: TMock<IMyView>;
     FSUT: TMyPresenter;
-    procedure Test2(const AValue1, AValue2: Integer);
   public
     [Setup]
     procedure Setup;
@@ -23,32 +22,23 @@ type
     [Test]
     procedure DisableSubmitWhenNoText;
     [Test]
-    procedure EnableSubmitWhenNoText;
+    procedure EnableSubmitWhenTextPresent;
   end;
 
 implementation
 
-procedure TMyTestObject.EnableSubmitWhenNoText;
-begin
-  FMockView.Setup.Expect.Once.When.EnableSubmit;
-
-  FSUT.Text := 'qq';
-
-  FMockView.Verify;
-end;
-
-procedure TMyTestObject.Setup;
+procedure TMyPresenterTests.Setup;
 begin
   FMockView := TMock<IMyView>.Create;
   FSUT := TMyPresenter.Create(FMockView);
 end;
 
-procedure TMyTestObject.TearDown;
+procedure TMyPresenterTests.TearDown;
 begin
   FSUT.Free;
 end;
 
-procedure TMyTestObject.DisableSubmitWhenNoText;
+procedure TMyPresenterTests.DisableSubmitWhenNoText;
 begin
   FMockView.Setup.Expect.Once.When.DisableSubmit;
 
@@ -57,11 +47,16 @@ begin
   FMockView.Verify;
 end;
 
-procedure TMyTestObject.Test2(const AValue1 : Integer;const AValue2 : Integer);
+procedure TMyPresenterTests.EnableSubmitWhenTextPresent;
 begin
+  FMockView.Setup.Expect.Once.When.EnableSubmit;
+
+  FSUT.Text := 'qq';
+
+  FMockView.Verify;
 end;
 
 initialization
-  TDUnitX.RegisterTestFixture(TMyTestObject);
+  TDUnitX.RegisterTestFixture(TMyPresenterTests);
 
 end.

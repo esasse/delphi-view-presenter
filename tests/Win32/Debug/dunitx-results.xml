@@ -1,36 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<test-results name="C:\Users\Erick Sasse\Documents\Embarcadero\Studio\Projects\MVP\Win32\Debug\Tests.exe" total="2" errors="2" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2023-07-07" time="0.001">
+<test-results name="C:\dev\delphi-view-presenter\tests\Win32\Debug\Tests.exe" total="2" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2023-07-07" time="0.001">
   <culture-info current-culture="en" current-uiculture="en" />
-  <test-suite type="Assembly" name="Tests.exe" executed="true" result="Failure" success="False" time="0.001" asserts="0">
+  <test-suite type="Assembly" name="Tests.exe" executed="true" result="Success" success="True" time="0.001" asserts="0">
     <results>
         <test-suite type="Namespace" name="MyPresenterTests" executed="true" result="Success" success="True" time="0.001" asserts="0" >
           <results>
-              <test-suite type="Fixture" name="TMyTestObject" executed="True" result="Success" success="True" time="0.001" >
+              <test-suite type="Fixture" name="TMyPresenterTests" executed="True" result="Success" success="True" time="0.001" >
                 <results>
-                  <test-case name="DisableSubmitWhenNoText" executed="True" result="Error" success="False" time="0.000" asserts="0" >
-                    <failure>
-                      <message>
-                        <![CDATA[ 
-  Method : DisableSubmit
-    Expectation [ Once When(  ) - Was 0 ] was not met. ]]>
-                      </message>
-                      <stack-trace>
-                        <![CDATA[  ]]>
-                      </stack-trace>
-                    </failure>
-                  </test-case>
-                  <test-case name="EnableSubmitWhenNoText" executed="True" result="Error" success="False" time="0.000" asserts="0" >
-                    <failure>
-                      <message>
-                        <![CDATA[ 
-  Method : EnableSubmit
-    Expectation [ Once When(  ) - Was 0 ] was not met. ]]>
-                      </message>
-                      <stack-trace>
-                        <![CDATA[  ]]>
-                      </stack-trace>
-                    </failure>
-                  </test-case>
+                  <test-case name="DisableSubmitWhenNoText" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="EnableSubmitWhenTextPresent" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                 </results>
               </test-suite>
           </results>
